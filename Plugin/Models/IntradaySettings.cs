@@ -4,18 +4,11 @@
 // </copyright>
 // --------------------------------------------------------------------------------------------------------------------
 
-namespace AmiBroker.Plugin.Models
+using System.Runtime.InteropServices;
+
+namespace MilkyAmiBroker.Plugins.Models
 {
-    using System.Runtime.InteropServices;
-
-    public enum DailyCompressionMode
-    {
-        Exchange,
-        Local,
-        SessionBased
-    }
-
-    [StructLayoutAttribute(LayoutKind.Sequential)]
+    [StructLayout(LayoutKind.Sequential)]
     public struct IntradaySettings
     {
         public int TimeShift; /* In hours */

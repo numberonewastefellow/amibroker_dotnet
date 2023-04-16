@@ -4,19 +4,24 @@
 // </copyright>
 // --------------------------------------------------------------------------------------------------------------------
 
-namespace AmiBroker.Plugin
+using System;
+using System.Collections.Generic;
+using System.Collections;
+using System.Diagnostics;
+using System.IO;
+using System.Linq;
+using System.Net;
+using System.Windows;
+using MilkyAmiBroker.Plugins.Models;
+namespace MilkyAmiBroker.Plugins
 {
-    using System;
-    using System.Diagnostics;
-    using System.Linq;
-    using System.Windows;
-
-    using Models;
+    
 
     public class DataSource
     {
         public DataSource(string databasePath, IntPtr mainWnd)
         {
+            LogMe.Log("configuring datasource");
             this.DatabasePath = databasePath;
             this.MainWnd = mainWnd;
             this.Broker = Activator.CreateInstance(Type.GetTypeFromProgID("Broker.Application", true));
@@ -49,8 +54,31 @@ namespace AmiBroker.Plugin
 
         public Quotation[] GetQuotes(string ticker, Periodicity periodicity, int limit, Quotation[] existingQuotes)
         {
+            Random r =new Random();
             // TODO: Return the list of quotes for the specified ticker.
-            return new Quotation[] { };
+            return new Quotation[]
+            {
+                new Quotation(){DateTime = new AmiDate(DateTime.Now),High = r.Next(910,920),Low = r.Next(900,909),Open = r.Next(900,920),Volume = r.Next(9000,100000),Price = r.Next(900,920)},
+                new Quotation(){DateTime = new AmiDate(DateTime.Now),High = r.Next(910,920),Low = r.Next(900,909),Open = r.Next(900,920),Volume = r.Next(9000,100000),Price = r.Next(900,920)},
+                new Quotation(){DateTime = new AmiDate(DateTime.Now),High = r.Next(910,920),Low = r.Next(900,909),Open = r.Next(900,920),Volume = r.Next(9000,100000),Price = r.Next(900,920)},
+                new Quotation(){DateTime = new AmiDate(DateTime.Now),High = r.Next(910,920),Low = r.Next(900,909),Open = r.Next(900,920),Volume = r.Next(9000,100000),Price = r.Next(900,920)},
+                new Quotation(){DateTime = new AmiDate(DateTime.Now),High = r.Next(910,920),Low = r.Next(900,909),Open = r.Next(900,920),Volume = r.Next(9000,100000),Price = r.Next(900,920)},
+                new Quotation(){DateTime = new AmiDate(DateTime.Now),High = r.Next(910,920),Low = r.Next(900,909),Open = r.Next(900,920),Volume = r.Next(9000,100000),Price = r.Next(900,920)},
+            };
+        }
+        public static Ohclv[] GetRandomOhclv()
+        {
+            Random r = new Random();
+            // TODO: Return the list of quotes for the specified ticker.
+            return new Ohclv[]
+            {
+                new Ohclv(){DateTime = DateTime.Now,High = r.Next(910,920),Low = r.Next(900,909),Open = r.Next(900,920),Volume = r.Next(9000,100000),Price = r.Next(900,920)},
+                new Ohclv(){DateTime = DateTime.Now,High = r.Next(910,920),Low = r.Next(900,909),Open = r.Next(900,920),Volume = r.Next(9000,100000),Price = r.Next(900,920)},
+                new Ohclv(){DateTime = DateTime.Now,High = r.Next(910,920),Low = r.Next(900,909),Open = r.Next(900,920),Volume = r.Next(9000,100000),Price = r.Next(900,920)},
+                new Ohclv(){DateTime = DateTime.Now,High = r.Next(910,920),Low = r.Next(900,909),Open = r.Next(900,920),Volume = r.Next(9000,100000),Price = r.Next(900,920)},
+                new Ohclv(){DateTime = DateTime.Now,High = r.Next(910,920),Low = r.Next(900,909),Open = r.Next(900,920),Volume = r.Next(9000,100000),Price = r.Next(900,920)},
+                new Ohclv(){DateTime = DateTime.Now,High = r.Next(910,920),Low = r.Next(900,909),Open = r.Next(900,920),Volume = r.Next(9000,100000),Price = r.Next(900,920)},
+            };
         }
     }
 }

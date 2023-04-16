@@ -4,7 +4,7 @@
 // </copyright>
 // --------------------------------------------------------------------------------------------------------------------
 
-namespace AmiBroker.Plugin.Models
+namespace MilkyAmiBroker.Plugins.Models
 {
     public enum Periodicity
     {

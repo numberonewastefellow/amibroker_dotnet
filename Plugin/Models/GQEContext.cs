@@ -4,11 +4,11 @@
 // </copyright>
 // --------------------------------------------------------------------------------------------------------------------
 
-namespace AmiBroker.Plugin.Models
-{
-    using System.Runtime.InteropServices;
+using System.Runtime.InteropServices;
 
-    [StructLayoutAttribute(LayoutKind.Sequential, CharSet = CharSet.Ansi)]
+namespace MilkyAmiBroker.Plugins.Models
+{
+    [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Ansi)]
     public struct GQEContext
     {
         public int StructSize;

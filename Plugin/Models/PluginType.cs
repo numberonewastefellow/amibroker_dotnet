@@ -4,7 +4,7 @@
 // </copyright>
 // --------------------------------------------------------------------------------------------------------------------
 
-namespace AmiBroker.Plugin.Models
+namespace MilkyAmiBroker.Plugins.Models
 {
     /// <summary>
     /// Possible types of plugins currently 4 types are defined

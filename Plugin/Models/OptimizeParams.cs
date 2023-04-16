@@ -4,12 +4,12 @@
 // </copyright>
 // --------------------------------------------------------------------------------------------------------------------
 
-namespace AmiBroker.Plugin.Models
-{
-    using System;
-    using System.Runtime.InteropServices;
+using System;
+using System.Runtime.InteropServices;
 
-    [StructLayoutAttribute(LayoutKind.Sequential)]
+namespace MilkyAmiBroker.Plugins.Models
+{
+    [StructLayout(LayoutKind.Sequential)]
     public struct OptimizeParams
     {
         /// <summary>

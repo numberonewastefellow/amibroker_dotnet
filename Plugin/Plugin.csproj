@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -7,13 +7,14 @@
     <ProjectGuid>{0C89D307-6ED8-4DCE-8509-171914BD672F}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>AmiBroker.Plugin</RootNamespace>
-    <AssemblyName>Plugin</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <RootNamespace>MilkyAmiBroker.Plugins</RootNamespace>
+    <AssemblyName>MilkyAmiPlugin</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
     <RestorePackages>true</RestorePackages>
     <PlatformTarget>x86</PlatformTarget>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -37,8 +38,8 @@
   <ItemGroup>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
-    <Reference Include="RGiesecke.DllExport.Metadata">
-      <HintPath>..\packages\UnmanagedExports.1.2.4.23262\lib\net\RGiesecke.DllExport.Metadata.dll</HintPath>
+    <Reference Include="RGiesecke.DllExport.Metadata, Version=1.0.0.0, Culture=neutral, PublicKeyToken=8f52d83c1a22df51, processorArchitecture=MSIL">
+      <HintPath>..\packages\UnmanagedExports.1.2.7\lib\net\RGiesecke.DllExport.Metadata.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="System" />
@@ -65,8 +66,12 @@
     <Compile Include="Models\AmiDate.cs" />
     <Compile Include="Models\AmiVar.cs" />
     <Compile Include="Models\ColorRef.cs" />
+    <Compile Include="Models\DailyCompressionMode.cs" />
+    <Compile Include="Models\DataSourceMode.cs" />
+    <Compile Include="Models\DataSourceType.cs" />
     <Compile Include="Models\GQEContext.cs" />
     <Compile Include="Models\InfoSite.cs" />
+    <Compile Include="Models\InfoSiteCategory.cs" />
     <Compile Include="Models\IntradaySettings.cs" />
     <Compile Include="Models\Keyboard.cs" />
     <Compile Include="Models\OptimizeItem.cs" />
@@ -75,19 +80,21 @@
     <Compile Include="Models\PluginID.cs" />
     <Compile Include="Models\PluginInfo.cs" />
     <Compile Include="Models\PluginNotification.cs" />
+    <Compile Include="Models\PluginNotificationReason.cs" />
     <Compile Include="Models\PluginStatus.cs" />
     <Compile Include="Models\PluginType.cs" />
     <Compile Include="Models\Quotation.cs" />
+    <Compile Include="Models\RecentInfiField.cs" />
     <Compile Include="Models\RecentInfo.cs" />
+    <Compile Include="Models\RecentInfoStatus.cs" />
     <Compile Include="Models\SiteInterface.cs" />
+    <Compile Include="Models\StatusCode.cs" />
     <Compile Include="Models\StockInfo.cs" />
+    <Compile Include="Models\VK.cs" />
     <Compile Include="Models\Workspace.cs" />
     <Compile Include="NativeMethods.cs" />
-    <Compile Include="Plugin.cs" />
+    <Compile Include="MilkyAmiPlugin.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Packages.config" />
   </ItemGroup>
   <ItemGroup>
     <Page Include="Controls\LoginBox.xaml">
@@ -99,12 +106,15 @@
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\nuget.targets" />
-  <Import Project="../packages/UnmanagedExports.1.2.4.23262/tools/RGiesecke.DllExport.targets" />
   <PropertyGroup>
     <PostBuildEvent>copy /Y "$(TargetPath)" "C:\Program Files (x86)\AmiBroker\Plugins"</PostBuildEvent>
   </PropertyGroup>
+  <Import Project="../packages/UnmanagedExports.1.2.7/tools/RGiesecke.DllExport.targets" Condition="Exists('../packages/UnmanagedExports.1.2.7/tools/RGiesecke.DllExport.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

@@ -4,21 +4,12 @@
 // </copyright>
 // --------------------------------------------------------------------------------------------------------------------
 
-namespace AmiBroker.Plugin.Models
+using System;
+using System.Runtime.InteropServices;
+
+namespace MilkyAmiBroker.Plugins.Models
 {
-    using System;
-    using System.Runtime.InteropServices;
-
-    public enum InfoSiteCategory
-    {
-        Market,
-        Group,
-        Sector,
-        Industry,
-        Watchlist
-    }
-
-    [StructLayoutAttribute(LayoutKind.Sequential)]
+    [StructLayout(LayoutKind.Sequential)]
     public struct InfoSite
     {
         public int StructSize;

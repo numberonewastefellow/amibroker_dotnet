@@ -4,20 +4,11 @@
 // </copyright>
 // --------------------------------------------------------------------------------------------------------------------
 
-namespace AmiBroker.Plugin.Models
+using System.Runtime.InteropServices;
+
+namespace MilkyAmiBroker.Plugins.Models
 {
-    using System.Runtime.InteropServices;
-
-    public enum StatusCode
-    {
-        OK,
-        Wait,
-        Error,
-        Unknown
-    }
-
-
-    [StructLayoutAttribute(LayoutKind.Sequential, CharSet = CharSet.Ansi)]
+    [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Ansi)]
     public struct PluginStatus
     {
         public int StructSize;

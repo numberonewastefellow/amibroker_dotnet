@@ -4,10 +4,10 @@
 // </copyright>
 // --------------------------------------------------------------------------------------------------------------------
 
-namespace AmiBroker.Plugin.Models
-{
-    using System;
+using System;
 
+namespace MilkyAmiBroker.Plugins.Models
+{
     internal class AmiDate : IComparable<AmiDate>
     {
         private ulong packedDate;

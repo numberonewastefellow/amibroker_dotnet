@@ -4,15 +4,14 @@
 // </copyright>
 // --------------------------------------------------------------------------------------------------------------------
 
-namespace AmiBroker.Plugin.Models
-{
-    using System;
-    using System.Runtime.InteropServices;
+using System.Runtime.InteropServices;
 
+namespace MilkyAmiBroker.Plugins.Models
+{
     /// <summary>
     /// 40-bytes 8-byte aligned
     /// </summary>
-    [StructLayoutAttribute(LayoutKind.Sequential, Size = 40)]
+    [StructLayout(LayoutKind.Sequential, Size = 40)]
     public struct Quotation
     {
         /*[MarshalAs(UnmanagedType.Struct, SizeConst = 8)]*/

@@ -4,14 +4,14 @@
 // </copyright>
 // --------------------------------------------------------------------------------------------------------------------
 
-namespace AmiBroker.Plugin.Models
-{
-    using System.Runtime.InteropServices;
+using System.Runtime.InteropServices;
 
+namespace MilkyAmiBroker.Plugins.Models
+{
     /// <summary>
     /// PluginInfo structure holds general information about plugin
     /// </summary>
-    [StructLayoutAttribute(LayoutKind.Sequential, CharSet = CharSet.Ansi)]
+    [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Ansi)]
     public struct PluginInfo
     {
         /// <summary>
@@ -36,15 +36,15 @@ namespace AmiBroker.Plugin.Models
         public int IDCode;
 
         /// <summary>
-        /// Long name of plug-in displayed in the Plugin dialog. <c>char[64]</c>
+        /// Long name of plug-in displayed in the MilkyAmiPlugin dialog. <c>char[64]</c>
         /// </summary>
-        [MarshalAsAttribute(UnmanagedType.ByValTStr, SizeConst = 64)]
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 64)]
         public string Name;
 
         /// <summary>
         /// Name of the plug-in vendor. <c>char[64]</c>
         /// </summary>
-        [MarshalAsAttribute(UnmanagedType.ByValTStr, SizeConst = 64)]
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 64)]
         public string Vendor;
 
         /// <summary>

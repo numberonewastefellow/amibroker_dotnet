@@ -4,10 +4,10 @@
 // </copyright>
 // --------------------------------------------------------------------------------------------------------------------
 
-namespace AmiBroker.Plugin.Models
-{
-    using System;
+using System;
 
+namespace MilkyAmiBroker.Plugins.Models
+{
     /// <summary>
     /// Used to define a unique ID for the plug-in.
     /// </summary>
@@ -19,7 +19,7 @@ namespace AmiBroker.Plugin.Models
         {
             if (code.Length != 4)
             {
-                throw new ArgumentException("Plugin ID code must be 4 characters long.", "code");
+                throw new ArgumentException("MilkyAmiPlugin ID code must be 4 characters long.", "code");
             }
 
             this.id = code[0] << 24 | code[1] << 16 | code[2] << 8 | code[3] << 0;

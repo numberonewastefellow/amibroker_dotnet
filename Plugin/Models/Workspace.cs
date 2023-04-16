@@ -4,43 +4,11 @@
 // </copyright>
 // --------------------------------------------------------------------------------------------------------------------
 
-namespace AmiBroker.Plugin.Models
+using System.Runtime.InteropServices;
+
+namespace MilkyAmiBroker.Plugins.Models
 {
-    using System;
-    using System.Runtime.InteropServices;
-
-    public enum DataSourceType
-    {
-        /// <summary>
-        /// Use data source type from preferences
-        /// </summary>
-        Default,
-
-        /// <summary>
-        /// Local data source, plugin ID
-        /// </summary>
-        LocalSource
-    }
-
-    public enum DataSourceMode
-    {
-        /// <summary>
-        /// Use data storage mode from preferences
-        /// </summary>
-        Default,
-
-        /// <summary>
-        /// Store data locally
-        /// </summary>
-        LocalStorage,
-
-        /// <summary>
-        /// No local data storage
-        /// </summary>
-        NoLocalStorage
-    }
-
-    [StructLayoutAttribute(LayoutKind.Sequential, CharSet = CharSet.Ansi)]
+    [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Ansi)]
     public struct Workspace
     {
         public DataSourceType DataSourceType;

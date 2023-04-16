@@ -4,10 +4,10 @@
 // </copyright>
 // --------------------------------------------------------------------------------------------------------------------
 
-namespace AmiBroker.Plugin.Models
-{
-    using System.Runtime.InteropServices;
+using System.Runtime.InteropServices;
 
+namespace MilkyAmiBroker.Plugins.Models
+{
     /// <summary>
     /// The COLORREF value is used to specify or retrieve an RGB color
     /// </summary>

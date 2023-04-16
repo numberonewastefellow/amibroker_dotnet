@@ -4,11 +4,11 @@
 // </copyright>
 // --------------------------------------------------------------------------------------------------------------------
 
-namespace AmiBroker.Plugin
-{
-    using System;
-    using System.Runtime.InteropServices;
+using System;
+using System.Runtime.InteropServices;
 
+namespace MilkyAmiBroker.Plugins
+{
     internal static class NativeMethods
     {
         /// <summary>

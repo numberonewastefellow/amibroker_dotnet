@@ -4,19 +4,11 @@
 // </copyright>
 // --------------------------------------------------------------------------------------------------------------------
 
-namespace AmiBroker.Plugin.Models
+using System;
+using System.Runtime.InteropServices;
+
+namespace MilkyAmiBroker.Plugins.Models
 {
-    using System;
-    using System.Runtime.InteropServices;
-
-    public enum PluginNotificationReason
-    {
-        DatabaseLoaded = 1,
-        DatabaseUnloaded = 2,
-        SettingsChange = 4,
-        StatusRightClick = 8
-    }
-
     /// <summary>
     /// PluginNotification structure is filled up by AmiBroker and passed to plugin as an argument of Notify() call.
     /// PluginNotificationReason property describes the "reason" of notification, that could be the fact that database

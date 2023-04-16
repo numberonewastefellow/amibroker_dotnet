@@ -4,11 +4,11 @@
 // </copyright>
 // --------------------------------------------------------------------------------------------------------------------
 
-namespace AmiBroker.Plugin.Models
-{
-    using System.Runtime.InteropServices;
+using System.Runtime.InteropServices;
 
-    [StructLayoutAttribute(LayoutKind.Sequential)]
+namespace MilkyAmiBroker.Plugins.Models
+{
+    [StructLayout(LayoutKind.Sequential)]
     public struct OptimizeItem
     {
         public string Name;
