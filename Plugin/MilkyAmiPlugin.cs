@@ -470,7 +470,7 @@ namespace MilkyAmiBroker.Plugins
                 {
                     LogMe.Log($"lastValid: {lastValid} {ticker}, {periodicity} ,{lastValid} frm GetQuotesEx", "quote.txt");
 
-                    isSocketConnected = false;
+                   // isSocketConnected = false;
                     lastTicker = ticker;
                     LogMe.Log("getting las 24 bars", "quote.txt");
                     List<Ohclv> last24hBars = getLast24hBars(ticker);
@@ -508,7 +508,7 @@ namespace MilkyAmiBroker.Plugins
                     AddTick(ticker, ohclv);
                 }
 
-                LogMe.Log("isConn: " + isSocketConnected + " lastT: " + lastTicker + " TC: " + ticker, quotesLogFile);
+                LogMe.Log("isConn: " + isSOcketInited + " lastT: " + lastTicker + " TC: " + ticker, quotesLogFile);
 
                 // Проверка на то что не переключили символы + первый запуск
                 if (String.IsNullOrEmpty(lastTicker) || !lastTicker.Equals(ticker))
@@ -538,7 +538,7 @@ namespace MilkyAmiBroker.Plugins
                     // isSocketConnected = true;  
 
                     jsonAnswer = "";
-                    isSocketConnected = true;
+                    isSOcketInited = true;
                     lastTicker = ticker;
                     return lastValid + 1;
                 }
@@ -675,7 +675,7 @@ namespace MilkyAmiBroker.Plugins
                 // не первый запуск - просто обновляем
 
                 // Если не подключились - нечего разбирать
-                if (!isSocketConnected)
+                if (!isSOcketInited)
 
                 {
                     Status = StatusCode.Error;
@@ -1110,7 +1110,6 @@ GetStockQty = (GetStockQtyDelegate)Marshal.GetDelegateForFunctionPointer(new Int
         private static string jsonAnswer;
         private static Ohclv ohclv;
         private static string lastTicker;
-        private static bool isSocketConnected;
         private static bool isFirstRun;
         private static bool isFristConfigure;
         private static string quotesLogFile= "quote.txt";
